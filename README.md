@@ -22,9 +22,4 @@ Built using **HTML, CSS, and JavaScript**, this project highlights stunning dest
 
 ---
 
-## 📸 Preview
 
-*(Add a screenshot or short video demo here)*  
-You can include a preview image like this:
-```html
-![Visit South Africa Preview](./images/preview.png)
