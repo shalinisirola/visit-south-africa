@@ -82,6 +82,7 @@ h1, h2, h3 {
     display: flex; 
     gap: 20px; 
     z-index: 1000;
+    transition: transform 0.28s ease, opacity 0.28s ease;
 }
 
 .navbar a {
@@ -104,6 +105,13 @@ h1, h2, h3 {
     top: 20px;
     left: 20px;
     z-index: 1001;
+    transition: transform 0.28s ease, opacity 0.28s ease;
+}
+
+.scroll-hidden {
+    transform: translateY(-140%);
+    opacity: 0;
+    pointer-events: none;
 }
 
 .top-left-home-button a {
@@ -240,7 +248,7 @@ h1, h2, h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 400px;
+    gap: 30px;
 }
 
 .footer-logo a {
@@ -505,4 +513,156 @@ button {
 
 body{
     background-color: #e8f5e9;
+}
+
+/* Responsive layout improvements */
+@media (max-width: 1024px) {
+    .attractions-section,
+    .events-section,
+    .cuisine-section {
+        padding: 56px 28px;
+    }
+
+    .header-overlay {
+        width: min(90vw, 720px);
+    }
+
+    .attraction-card,
+    .event-card,
+    .dish-card,
+    .restaurant-card {
+        width: min(100%, 320px);
+    }
+}
+
+@media (max-width: 768px) {
+    .top-left-home-button {
+        position: static;
+        margin: 12px 12px 0;
+        text-align: center;
+    }
+
+    .navbar {
+        position: static;
+        width: calc(100% - 24px);
+        margin: 12px auto 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .navbar a,
+    .top-left-home-button a,
+    .explore-button,
+    button {
+        padding: 8px 14px;
+        font-size: 0.95rem;
+    }
+
+    .slideshow-container {
+        height: 82vh;
+        min-height: 520px;
+    }
+
+    .header {
+        padding: 18px;
+    }
+
+    .header-overlay {
+        width: min(92vw, 640px);
+        padding: 16px;
+    }
+
+    .header-overlay p {
+        font-size: 1rem;
+        margin-top: 10px;
+        padding: 0 10px;
+        border-left-width: 3px;
+        padding-left: 10px;
+    }
+
+    h1,
+    h2 {
+        font-size: 2rem;
+    }
+
+    .events-section h2,
+    .attractions-section h2 {
+        font-size: 2rem;
+    }
+
+    .attractions-section,
+    .events-section,
+    .cuisine-section {
+        padding: 40px 16px;
+    }
+
+    .attractions-description,
+    .overview {
+        font-size: 1rem;
+        text-align: left;
+        padding: 16px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .cards,
+    .food-container,
+    .toggle-buttons,
+    .buttons {
+        gap: 12px;
+    }
+
+    .attraction-card,
+    .event-card,
+    .dish-card,
+    .restaurant-card,
+    .food-item {
+        width: 100%;
+        max-width: 360px;
+        margin: 8px auto;
+    }
+
+    .footer {
+        padding: 28px 16px;
+    }
+
+    .footer-content {
+        gap: 18px;
+    }
+
+    .footer-socials a img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar,
+    .top-left-home-button {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .navbar a,
+    .top-left-home-button a,
+    button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header-overlay h1 {
+        font-size: 1.8rem;
+    }
+
+    .header-overlay p,
+    .attractions-description,
+    .overview {
+        font-size: 0.95rem;
+    }
+
+    .food-item img {
+        height: 180px;
+        object-fit: cover;
+    }
 }

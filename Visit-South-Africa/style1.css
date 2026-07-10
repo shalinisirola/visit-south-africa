@@ -25,6 +25,7 @@ body, html {
     display: flex;
     gap: 20px;
     z-index: 1000;
+    transition: transform 0.28s ease, opacity 0.28s ease;
   }
   
   .navbar a {
@@ -47,6 +48,13 @@ body, html {
     top: 20px;
     left: 20px;
     z-index: 1001;
+    transition: transform 0.28s ease, opacity 0.28s ease;
+  }
+
+  .scroll-hidden {
+    transform: translateY(-140%);
+    opacity: 0;
+    pointer-events: none;
   }
   
   .top-left-home-button a {
@@ -269,9 +277,55 @@ body, html {
   
 
   @media (max-width: 768px) {
+    .top-left-home-button {
+      position: static;
+      margin: 12px 12px 0;
+      text-align: center;
+    }
+
+    .navbar {
+      position: static;
+      width: calc(100% - 24px);
+      margin: 12px auto 0;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .navbar a,
+    .top-left-home-button a {
+      padding: 8px 14px;
+      font-size: 0.95rem;
+    }
+
+    .about-section {
+      padding: 40px 16px;
+    }
+
+    .about-section h2,
+    .team-title {
+      font-size: 2rem;
+    }
+
+    .about-section .intro-text {
+      font-size: 1rem;
+      padding: 16px;
+    }
+
     .highlights {
       flex-direction: column;
       align-items: center;
+    }
+
+    .highlight-item,
+    .team-member {
+      width: min(100%, 340px);
+      margin: 10px auto;
+    }
+
+    .team-section {
+      justify-content: center;
+      padding: 20px 16px;
     }
   
     .footer-content {
@@ -352,4 +406,27 @@ body, html {
         height: auto;
         margin-top: 10px; 
     }
+}
+
+@media (max-width: 480px) {
+  .navbar,
+  .top-left-home-button {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  .navbar a,
+  .top-left-home-button a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .timeline-content p {
+    font-size: 1rem;
+    padding: 14px;
+  }
+
+  .timeline-content img {
+    padding: 0;
+  }
 }
